@@ -12,18 +12,15 @@ export default function Home(){
     const handleCreateUser = async () => {
         
         try {
-          // Substitua a URL abaixo pela sua rota de criação de usuário
           const response = await api.post('/users/create', {
             name,
             email,
           });
-          alert('Cadastro realizado com sucesso')
-          // Exemplo de como lidar com a resposta da API
+
           if (response.data.success) {
-            alert('Cadastro realizado com sucesso')
-            //Alert.alert('Cadastro realizado com sucesso!');
+            Alert.alert('Cadastro realizado com sucesso')
           } else {
-            alert('Erro no cadastro. Tente novamente.');
+            Alert.alert('Erro no cadastro. Tente novamente.');
             console.log(response)
           }
         } catch (error) {
