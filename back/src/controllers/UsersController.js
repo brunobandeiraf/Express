@@ -2,12 +2,6 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 class UsersController{
-    
-    // create(request, response) {
-    //     const { name, email } = request.body
-    
-    //     response.json({ name, email })
-    // }
 
     async create(request, response){
 
@@ -43,7 +37,7 @@ class UsersController{
     }
 
     async delete(request, response){
-        console.log("foi")
+        
         try{
             const { id } = request.params
             //const { id } = request.body
