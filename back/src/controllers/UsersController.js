@@ -36,6 +36,17 @@ class UsersController{
         }
     }
 
+    async view(request, response){
+        try{
+            const users = await prisma.user.findFirst();
+
+            response.json(users)
+            
+        }catch (err) { 
+            return response.status(409).send()
+        }
+    }
+
     async delete(request, response){
         
         try{
